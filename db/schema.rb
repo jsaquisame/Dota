@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_09_193330) do
+ActiveRecord::Schema.define(version: 2018_10_09_202215) do
 
   create_table "attacks", force: :cascade do |t|
     t.string "attack_type"
@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2018_10_09_193330) do
   end
 
   create_table "creeps", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
+    t.string "creep_name"
+    t.string "creep_type"
     t.integer "attack_id"
     t.integer "skill_id"
     t.datetime "created_at", null: false
