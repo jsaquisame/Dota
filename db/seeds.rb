@@ -6,10 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Base.destroy_all
+
 Attack.destroy_all
 Stat.destroy_all
+Skill.destroy_all
+Base.destroy_all
 Hero.destroy_all
+
 
 #two bases of dota
 base1 = Base.create(team: 'Radiant');
@@ -26,22 +29,27 @@ attribute2= Stat.create(att: 'Strength')
 attribute3= Stat.create(att: 'Intelegence')
 
 
-#
+#create skills
 100.times do 
-    create_skill = Skill.create
+    create_skill = Skill.create(name: Faker::Music.instrument,
+                                description: Faker::Music.album,
+                                cooldown: Faker::Number.between(1,30))
+    end
 
-#deploy heroes
+#create heroes
+10.times do
+    attack = Attack.all.sample
+    attribute = Stat.all.sample
+    skill= Skill.all.sample
+    base_sample = Base.all.sample
+    create_hero = Hero.create(name: Faker::Dota.hero,
+                              description: Faker::Dota.quote,
+                              popularity: Faker::Number.between(1,100),
+                              base: base_sample,
+                              attack: attack,
+                              stat: attribute,
+                              skill: skill )
+    end
 
-# 10.times do
-#     base = Base.all.sample
-#     attack = Attack.all.sample
-#     attribute = Stat.all.sample
-#     create_hero = Hero.create(name: Faker::Dota.hero,
-#                               description: Faker::Dota.quote,
-#                               popularity: Faker::Number.between(1,100),
-#                               base: base,
-#                               attack: attack,
-#                               stat: attribute)
-#     end
 
 
