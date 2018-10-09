@@ -26,7 +26,7 @@ attack2 = Attack.create(attack_type: 'Range')
 # #status
 attribute1= Stat.create(att: 'Agiligy')
 attribute2= Stat.create(att: 'Strength')
-attribute3= Stat.create(att: 'Intelegence')
+attribute3= Stat.create(att: 'Intilegence')
 
 
 #create skills
