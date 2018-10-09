@@ -7,11 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Attack.destroy_all
-Stat.destroy_all
+
+
 Skill.destroy_all
+Stat.destroy_all    
 Base.destroy_all
+Attack.destroy_all
 Hero.destroy_all
+
 
 
 #two bases of dota
@@ -38,18 +41,29 @@ attribute3= Stat.create(att: 'Intelegence')
 
 #create heroes
 10.times do
-    attack = Attack.all.sample
-    attribute = Stat.all.sample
-    skill= Skill.all.sample
+    attack_sample = Attack.all.sample
+    attribute_sample = Stat.all.sample
+    skill_sample= Skill.all.sample
     base_sample = Base.all.sample
     create_hero = Hero.create(name: Faker::Dota.hero,
                               description: Faker::Dota.quote,
                               popularity: Faker::Number.between(1,100),
                               base: base_sample,
-                              attack: attack,
-                              stat: attribute,
-                              skill: skill )
+                              attack: attack_sample,
+                              stat: attribute_sample,
+                              skill: skill_sample )
     end
+
+#create creeps
+10.times do
+    attack_sample = Attack.all.sample
+    skill_sample= Skill.all.sample
+    create_creep = Creep.create(name: Faker::GameOfThrones.character,
+                                type: Faker::GameOfThrones.city,
+                                attack: attack_sample,
+                                skill: skill_sample)
+    end
+
 
 
 

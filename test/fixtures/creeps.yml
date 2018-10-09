@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  type: 
+  creep_name: MyString
+  creep_type: MyString
   attack: one
   skill: one
 
 two:
-  name: MyString
-  type: 
+  creep_name: MyString
+  creep_type: MyString
   attack: two
   skill: two
