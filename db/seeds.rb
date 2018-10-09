@@ -55,8 +55,8 @@ attribute3= Stat.create(att: 'Intelegence')
 10.times do
     attack_sample = Attack.all.sample
     skill_sample= Skill.all.sample
-    create_creep = Creep.create(name: Faker::GameOfThrones.character,
-                                type: Faker::GameOfThrones.city,
+    create_creep = Creep.create(creep_name: Faker::GameOfThrones.character,
+                                creep_type: Faker::GameOfThrones.dragon,
                                 attack: attack_sample,
                                 skill: skill_sample)
     end
