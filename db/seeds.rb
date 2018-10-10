@@ -8,11 +8,13 @@
 
 
 require 'json'
-file = File.read (Rails.root.join('db/got.json'))
-data = JSON.parse(file)
-# data.keys
+got_file = File.read (Rails.root.join('db/got.json'))
+got_data = JSON.parse(got_file)
+got_data.keys
 
-
+beer_file = File.read (Rails.root.join('db/beer.json'))
+beer_data = JSON.parse(beer_file)
+beer_data.keys
 
 Skill.destroy_all
 Stat.destroy_all    
@@ -23,12 +25,12 @@ Hero.destroy_all
 
 
 #two bases of dota
-base1 = Base.create(team: data['characterName']);
-base2 = Base.create(team: data['houseName']);
+base1 = Base.create(team: got_data["characters"][0]["characterName"]);
+base2 = Base.create(team: got_data["characters"][1]["characterName"]);
 require'faker'
 
 #attack_type
-attack1 = Attack.create(attack_type: 'Melee')
+attack1 = Attack.create(attack_type: beer_file["prefix"])
 attack2 = Attack.create(attack_type: 'Range')
 
 # #status
