@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+include "json"
+file = File.read "C:/Users/jakes/Desktop/got.json"
+data = JSON.parse(file)
+
 Skill.destroy_all
 Stat.destroy_all    
 Base.destroy_all
@@ -15,8 +20,8 @@ Hero.destroy_all
 
 
 #two bases of dota
-base1 = Base.create(team: 'Radiant');
-base2 = Base.create(team: 'Dire');
+base1 = Base.create(team: data['characterName']);
+base2 = Base.create(team: data['houseName']);
 require'faker'
 
 #attack_type
@@ -27,6 +32,7 @@ attack2 = Attack.create(attack_type: 'Range')
 attribute1= Stat.create(att: 'Agility')
 attribute2= Stat.create(att: 'Strength')
 attribute3= Stat.create(att: 'Inteligence')
+
 
 
 #create skills
