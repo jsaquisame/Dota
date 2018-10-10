@@ -7,9 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-include "json"
-file = File.read "C:/Users/jakes/Desktop/got.json"
+require 'json'
+file = File.read (Rails.root.join('db/got.json'))
 data = JSON.parse(file)
+# data.keys
+
+
 
 Skill.destroy_all
 Stat.destroy_all    
