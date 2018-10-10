@@ -4,6 +4,6 @@
 
 <p>Description: </b>"  <%= @show_hero2.description %> "</p>
 <p>Popularity: </b><%= @show_hero2.popularity %></p>
-<p>Attack type: </b>"  <%= @show_hero2.attack.attack_type %> "</p>
+<p><%= link_to  'Attack type:' ,'/stat/index' %></b>"  <%= @show_hero2.attack.attack_type %> "</p>
 <p>Primary Attribute: </b>"  <%= @show_hero2.stat.att %> "</p>
 <p>Skill: </b>" Play <%= @show_hero2.skill.name %> "</p>

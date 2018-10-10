@@ -24,9 +24,9 @@ attack1 = Attack.create(attack_type: 'Melee')
 attack2 = Attack.create(attack_type: 'Range')
 
 # #status
-attribute1= Stat.create(att: 'Agiligy')
+attribute1= Stat.create(att: 'Agility')
 attribute2= Stat.create(att: 'Strength')
-attribute3= Stat.create(att: 'Intilegence')
+attribute3= Stat.create(att: 'Inteligence')
 
 
 #create skills
@@ -37,7 +37,7 @@ attribute3= Stat.create(att: 'Intilegence')
     end
 
 #create heroes
-10.times do
+20.times do
     attack_sample = Attack.all.sample
     attribute_sample = Stat.all.sample
     skill_sample= Skill.all.sample

@@ -2,7 +2,7 @@
     <head>
         <ul>
             <li><h1>Choose your Hero</h1></li> 
-            <li><h1>Choose your Hero by Stat </h1></li>
+            <li><h1><%= link_to 'Choose your Hero by Stat' , '/stat/index'  %></h1></li>
             <li><h1>Choose your Hero by Attack Type</h1></li>
         </ul>
     </head>
@@ -13,7 +13,6 @@
     <% @list_hero.each do |hero| %>
         <li>
             Name: <%= link_to hero.name, hero  %>  
-            
         </li>
     <% end %>
 </ul>
