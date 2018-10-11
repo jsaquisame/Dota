@@ -1,0 +1,17 @@
+{
+    "attack_type":[
+        {
+          "attack_name":"Range",
+          "distance":"7.7"
+       },
+       {
+        "attack_name":"Melee",
+        "distance":"3.7"
+        },
+        {
+            "attack_name":"Neutral",
+            "distance":"5"
+        }
+    ]
+}
+    

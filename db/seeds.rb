@@ -12,9 +12,9 @@ got_file = File.read (Rails.root.join('db/got.json'))
 got_data = JSON.parse(got_file)
 got_data.keys
 
-beer_file = File.read (Rails.root.join('db/beer.json'))
-beer_data = JSON.parse(beer_file)
-beer_data.keys
+attack_file = File.read (Rails.root.join('db/attack.json'))
+attack_data = JSON.parse(attack_file)
+attack_data.keys
 
 Skill.destroy_all
 Stat.destroy_all    
@@ -25,13 +25,13 @@ Hero.destroy_all
 
 
 #two bases of dota
-base1 = Base.create(team: got_data["characters"][0]["characterName"]);
-base2 = Base.create(team: got_data["characters"][1]["characterName"]);
+base1 = Base.create(team: got_data["characters"][6]["houseName"]);
+base2 = Base.create(team: got_data["characters"][1]["houseName"]);
 require'faker'
 
 #attack_type
-attack1 = Attack.create(attack_type: beer_file["prefix"])
-attack2 = Attack.create(attack_type: 'Range')
+attack1 = Attack.create(attack_type: attack_data["attack_type"][0]["attack_name"] )
+attack2 = Attack.create(attack_type: attack_data["attack_type"][1]["attack_name"])
 
 # #status
 attribute1= Stat.create(att: 'Agility')
@@ -48,13 +48,13 @@ attribute3= Stat.create(att: 'Inteligence')
     end
 
 #create heroes
-20.times do
+50.times do
     attack_sample = Attack.all.sample
     attribute_sample = Stat.all.sample
     skill_sample= Skill.all.sample
     base_sample = Base.all.sample
-    create_hero = Hero.create(name: Faker::Dota.hero,
-                              description: Faker::Dota.quote,
+    create_hero = Hero.create(name: Faker::StarWars.unique.character,
+                              description: Faker::StarWars.quote,
                               popularity: Faker::Number.between(1,100),
                               base: base_sample,
                               attack: attack_sample,
