@@ -1,9 +1,11 @@
-
+<body>
 <h2> <%= @show_hero2.name %> </h2>
-
-<p>Base: </b>"  <%= @show_hero2.base.team %> "</p>
-<p>Description: </b>"  <%= @show_hero2.description %> "</p>
-<p>Popularity: </b><%= @show_hero2.popularity %></p>
-<p>Attack Type: </b>"  <%= @show_hero2.attack.attack_type %> "</p>
-<p><%= link_to  'Primary Attribute:' ,'/stat/index' %> </b>"  <%= @show_hero2.stat.att %> "</p>
-<p>Skill: </b>" Play <%= @show_hero2.skill.name %> "</p>
+    <ul>
+        <li><b>Base: </b>"  <%= @show_hero2.base.team %> "</li>
+        <li><b>Description: </b>"  <%= @show_hero2.description %> "</li>
+        <li><b>Popularity: </b><%= @show_hero2.popularity %></li>
+        <li><b>Attack Type: </b>"  <%= @show_hero2.attack.attack_type %> "</li>
+        <li><b><%= link_to  'Primary Attribute:' ,'/stat/index' %> </b>"  <%= @show_hero2.stat.att %> "</li>
+        <li><b>Skill: </b>" Play <%= @show_hero2.skill.name %> "</li>
+    </ul>
+</body>

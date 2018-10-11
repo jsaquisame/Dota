@@ -1,22 +1,19 @@
-<h1>Choose your Hero by Stat</h1>
 <body>
-<ul>
-    <% @list_stat.each do |stat| %>
-        <li>
-            Name: <%=  stat.att  %>  
-        </li>
-        <ul>
-            <% @hero.each do |hero| %>
-                <% if hero.stat.att == stat.att %> 
-                    <li>
-                         Name: <%= link_to hero.name, hero  %> 
-                         ~ Attributes: <%=  hero.stat.att  %>  
-                    </li>
-                <% end %>
+<h1>Choose your Hero by Stat</h1>
+
+<% @list_stat.each do |stat| %>
+    <p><strong>Name: <%=  stat.att  %></strong></p>      
+        <ul><% @hero.each do |hero| %>
+            <% if hero.stat.att == stat.att %> 
+                <li>
+                        Name: <%= link_to hero.name, hero  %> 
+                        ~ Attributes: <%=  hero.stat.att  %>  
+                </li>
             <% end %>
+        <% end %>
         </ul>
-    <% end %>
-</ul>
+<% end %>
+
 </body>
 
 
