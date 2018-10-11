@@ -1,0 +1,16 @@
+<body>
+<h1>Choose your Hero by Attack Type</h1>
+
+<% @list_attack.each do |attack| %>
+    <p><strong>Name: <%=  attack.attack_type  %></strong></p>      
+        <ul><% @hero.each do |hero| %>
+            <% if hero.attack.attack_type == attack.attack_type %> 
+                <li>
+                    Name: <%= link_to hero.name, hero  %>
+                </li>
+            <% end %>
+        <% end %>
+        </ul>
+<% end %>
+
+</body>

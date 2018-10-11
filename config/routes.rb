@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'attack/index'
+  get 'attack/show'
   get 'stat/index'
   get 'stat/show'
   resources :hero, only: [:index,:show]

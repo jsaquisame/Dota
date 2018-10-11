@@ -6,8 +6,7 @@
         <ul><% @hero.each do |hero| %>
             <% if hero.stat.att == stat.att %> 
                 <li>
-                        Name: <%= link_to hero.name, hero  %> 
-                        ~ Attributes: <%=  hero.stat.att  %>  
+                    Name: <%= link_to hero.name, hero  %>
                 </li>
             <% end %>
         <% end %>
