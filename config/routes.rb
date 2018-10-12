@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'hero/about'
   get 'attack/index'
   get 'attack/show'
   get 'stat/index'

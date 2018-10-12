@@ -2,11 +2,20 @@
 <html lang="en-US">
 <head>
     <title>Intro to Project</title>
-    <h1><%= link_to 'Welcome to Dota', root_path %></h1>
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
+
+<body>
+<%= link_to 'Welcome to Dota', root_path %> <%= link_to 'About Us', '/hero/about' %>
 <%= yield %>
 <footer>
 <p><i>No Copyrights</i></p>
 </footer>
 <p><strong><%= link_to 'Back to Menu', root_path %></strong></p>
+</body>
 </html>

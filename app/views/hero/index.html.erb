@@ -1,17 +1,18 @@
-<body>
+<div class="container-fluid">
+
+
     <h1>Choose your Hero</h1>
     <ul>
         <li><h1><%= link_to 'Choose your Hero by Stat' , '/stat/index'  %></h1></li>
         <li><h1><%= link_to 'Choose your Hero by Attack Type' , '/attack/index'  %></h1></li>
     </ul>
 <h2>List of Current Heroes</h2>
-<ul>
+<ul class="list-group">
     <% @list_hero.each do |hero| %>
-        <li>
+        <li class="list-group-item">
             Name: <%= link_to hero.name, hero  %>  
         </li>
     <% end %>
 </ul>
-</body>
-
+</div>
 
