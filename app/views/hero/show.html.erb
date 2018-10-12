@@ -4,7 +4,7 @@
         <li><b>Base: </b>"  <%= @show_hero2.base.team %> "</li>
         <li><b>Description: </b>"  <%= @show_hero2.description %> "</li>
         <li><b>Popularity: </b><%= @show_hero2.popularity %></li>
-        <li><b>Attack Type: </b>"  <%= @show_hero2.attack.attack_type %> "</li>
+        <li><b><%= link_to 'Attack Type', '/attack/index' %> </b>"  <%= @show_hero2.attack.attack_type %> "</li>
         <li><b><%= link_to  'Primary Attribute:' ,'/stat/index' %> </b>"  <%= @show_hero2.stat.att %> "</li>
         <li><b>Skill: </b>" Play <%= @show_hero2.skill.name %> "</li>
     </ul>
